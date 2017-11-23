@@ -46,28 +46,29 @@
                 </div>
                 <div class="deposit-B-left-img clearfix">
                     <ul >
-                        <li>
-                            <div><div></div></div>
-                            <p>Bank/Credit <br> Card</p>
+                        <li v-on:click="selected='Bank/Credit Card'">
+                            <div><div :class="{'changeColor':selected=='Bank/Credit Card'}"></div></div>
+                            <p :class="{'fontColor':selected=='Bank/Credit Card'}">Bank/Credit <br> Card</p>
                         </li>
-                        <li><div><div></div></div>
-                            <p>Skrill</p>
+                        <li v-on:click="selected='Skrill'">
+                        <div><div :class="{'changeColor':selected=='Skrill'}"></div></div>
+                            <p :class="{'fontColor':selected=='Skrill'}">Skrill</p>
                         </li>
-                        <li>
-                            <div><div></div></div>
-                            <p>Neteller</p>
+                        <li  v-on:click="selected='Neteller'">
+                            <div><div :class="{'changeColor':selected=='Neteller'}"></div></div>
+                            <p :class="{'fontColor':selected=='Neteller'}">Neteller</p>
                         </li>
-                        <li>
-                            <div><div></div></div>
-                            <p>China <br>Union Pay</p>
+                        <li v-on:click="selected='China Union Pay'">
+                            <div><div :class="{'changeColor':selected=='China Union Pay'}"></div></div>
+                            <p :class="{'fontColor':selected=='China Union Pay'}">China <br>Union Pay</p>
                         </li>
-                         <li>
-                           <div><div></div></div>
-                            <p>Bank <br>Transter</p>
+                         <li v-on:click="selected='Bank Transter'">
+                           <div><div :class="{'changeColor':selected=='Bank Transter'}"></div></div>
+                            <p :class="{'fontColor':selected=='Bank Transter'}">Bank <br>Transter</p>
                         </li> 
                     </ul>
                 </div>
-                <div class="deposit-B-left-intruce clearfix">
+                <div class="deposit-B-left-intruce clearfix" v-show="selected=='Bank/Credit Card'">
                      <h4>Bank/Credit Card</h4>
                      <div>Bank and Credit are an easy way to fund your account and allow you to fund you INFINOX accout the same day. if you would like to fund your INFINOX Live Account via bank/credit card,please fill in the amount and currency you wish to fund with and click Deposit. Please be aware that we have strict measure in place to protext both our clients and INFINOX from fraud issues.<br>
                     <i>1.75% free is added automatically for credit card transactions 
@@ -92,11 +93,11 @@
                         </li>
                     </ul>
                 </div>
-                <div class="deposit-B-left-Note hide">
-                    <div>NOTE:Found your account in your accounts currency.Example</div>
-                <div>EUR account-Found using EUR bank account details</div>
-                <div>EUR account-Found using EUR bank account details</div>
-                <div>EUR account-Found using EUR bank account details</div></div>
+                <div class="deposit-B-left-Note" v-show="selected=='Bank Transter'">
+                  <div>NOTE:Found your account in your accounts currency.Example</div>
+                  <div>EUR account-Found using EUR bank account details</div>
+                  <div>EUR account-Found using EUR bank account details</div>
+                  <div>EUR account-Found using EUR bank account details</div></div>
                 <div class="deposit-B-left-button">
                     <button type="">Deposit History</button>
                 </div>
@@ -118,21 +119,21 @@
                     <div>Enter account</div>
                     <input type="text" name="" value="">
                 </div>
-                <div class="deposit-B-right-RMBPay hide">
+                <div class="deposit-B-right-RMBPay" v-show="selected=='China Union Pay'">
                     <span>RMB to be paid:</span><input type="text" value="5">
                 </div>
                 <div class="deposit-B-right-payment">
                      <div>Please consirm your parment method from the list below.</div>
-                    <select >
-                        <option value="">Bank/Credit Card</option>
-                        <option value="">Select</option>
-                        <option value="">Skrill</option>
-                        <option value="">Neteller</option>
-                        <option value="">China Union Pay</option>
-                        <option value="">Bank Transter</option>
+                    <select v-model="selected" v-on:change="selectChange(selected)">
+                        <option selected="selected">Bank/Credit Card</option>
+                        <option>Select</option>
+                        <option>Skrill</option>
+                        <option>Neteller</option>
+                        <option>China Union Pay</option>
+                        <option>Bank Transter</option>
                     </select>
                 </div>
-                <div class="deposit-B-right-intruce hide clearfix">
+                <div class="deposit-B-right-intruce  clearfix" v-show="selected=='Bank Transter'">
                      <h4>Bank Transfer</h4>
                      <div>Bank and Credit are an easy way to fund your account and allow you to fund you INFINOX accout the same day. if you would like to fund your INFINOX Live Account via bank/credit card,please fill in the amount and currency you wish to fund with and click Deposit. Please be aware that we have strict measure in place to protext both our clients and INFINOX from fraud issues.<br>
                      Bank:Barclays<br>
@@ -140,15 +141,15 @@
 
                      </div>
                 </div>
-                <div class="deposit-B-right-cardNum">
+                <div class="deposit-B-right-cardNum" v-show="selected=='Bank/Credit Card'">
                      <div>Card Number</div>
                     <input type="text" name="" value="">
                 </div>
-                <div class="deposit-B-right-HolderName">
+                <div class="deposit-B-right-HolderName" v-show="selected=='Bank/Credit Card'">
                     <div>Card Holder Name</div>
                     <input type="text" name="" value="">
                 </div>
-                <div class="deposit-B-right-date clearfix">
+                <div class="deposit-B-right-date clearfix" v-show="selected=='Bank/Credit Card'">
                     <div class="left fl">
                         <div>Expiratin Date</div>
                         <div ><input type="text" value="MM">
@@ -159,18 +160,21 @@
                         <div><input type="text" class="fr" value="CVV"></div>
                     </div>
                 </div>
-                <div class="deposit-B-right-debited clearfix">
+                <div class="deposit-B-right-debited clearfix" v-show="selected=='Bank/Credit Card'">
                     <div class="deposit-B-right-text fl">
                          <h5>Amount Debited:$0.00</h5>
                          <div>The data of your credit card is used only at the time of the transaction and are transmitted over a secure protocol to the acquiring bank in encryted. Details of your card are not stored in the system and,ancoordingly,can not be transferred to find parties</div>
                     </div>
                     <div class="deposit-B-right-img fr"></div>
                 </div>
-                <div class="deposit-B-right-Msg hide">
+                <div class="deposit-B-right-Msg" v-show="selected=='Skrill'">
                      <div>Amount Debited:$0<br>
                     Skrill payments are charged a 2.5% + 0.15 EUR transaction fee</div>
                 </div>
-
+                <div class="deposit-B-right-Msg" v-show="selected=='Neteller'">
+                     <div>Amount Debited:$0<br>
+                    Neteller payments are charged a 2.5% + 0.15 EUR transaction fee</div>
+                </div>
                 <div class="deposit-B-right-button">
                     <button>FUND NOW</button>
                 </div>
@@ -178,11 +182,71 @@
         </div>
         <!-- deposit下半部分结束 -->
         <!-- deposit底部开始 -->
-       
         <!-- deposit底部结束 -->
     </div>
+    <div class="deposit-footer" v-show="selected=='Bank Transter'">
+            <table >
+                <thead>
+                    <tr>     
+                        <th>ACCOUNT currency</th>
+                        <th>GBP</th>
+                        <th>EUR</th>
+                        <th>USD</th>
+                        <th>JPY</th>
+                        <th>SGD</th>
+                        <th>AUD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SORT CODE</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                    </tr>
+                    <tr>
+                        <td>ACCOUNT NUMBER</td>
+                        <td>23349802</td>
+                        <td>43456666</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                    </tr>
+                     <tr>
+                        <td>SWIFT</td>
+                        <td>23349802</td>
+                        <td>43456666</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                    </tr>
+                     <tr>
+                        <td>IBAN</td>
+                        <td>23349802</td>
+                        <td>43456666</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                        <td>200000</td>
+                    </tr>
+                    <tr>
+                        <td>REFERENCE</td>
+                        <td colspan="6">YOUR INFINOX ACCOUNT LOGIN</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div><i>+</i>You should have received these setails in your original account opening email,if you have misplaced this email or need a refresher,simply email</div>
+    </div>
+    <div class="deposit-last">
+        <div>@2016 Trading FOREX FX,Cuboid Options and CFD's is high risk.Losses can exceed deposits</div>
+    </div>
 </div>
-   
+
 </template>
 
 <script>
@@ -190,12 +254,14 @@ export default {
   name: 'app',
   data () {
     return {
-      pageView:''
+      pageView:'',
+      selected:''
     }
   },
   methods:{
      selectChange:function(num){
       this.pageView = num;
+      console.log(num);
      }
   }
 }
@@ -269,7 +335,17 @@ body,html {
 .height {
     height: calc(100vh - 120px);
 }
+.bankCredit {
+      background: url("../deposit/icon_card.png") no-repeat bottom;
+      width: 46px;
+      height: 33px; 
+}
+.changeColor{
+  background-position:bottom  !important; 
 
-
+    }
+.fontColor {
+    color:#F5C603 !important;
+}
 
 </style>

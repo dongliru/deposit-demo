@@ -104,7 +104,7 @@
 
     }
     .deposit-B-left-img li:first-child p{
-        color:#F5C603;
+        color:white;
         text-align: center;
  
 
@@ -122,7 +122,7 @@
     }
    
     .deposit-B-left-img li:first-child div div {
-            background: url("../deposit/icon_card.png") no-repeat  bottom;
+            background: url("../deposit/icon_card.png") no-repeat ;
             width: 46px;
             height: 33px;    
            
