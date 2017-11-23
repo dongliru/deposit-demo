@@ -46,26 +46,10 @@
                 </div>
                 <div class="deposit-B-left-img clearfix">
                     <ul >
-                        <li v-on:click="classControll('Bank/Credit Card')"  :class="{'active':selected=='Bank/Credit Card'}">
+                         <li v-for='val in depositWay' v-on:click="classControll(val)"  :class="{'active':selected==val}" >
                             <div><div></div></div>
-                            <p>Bank/Credit <br> Card</p>
+                            <p>{{val}}</p>
                         </li>
-                        <li v-on:click="classControll('Skrill')" :class="{'active':selected=='Skrill'}">
-                        <div><div ></div></div>
-                            <p>Skrill</p>
-                        </li>
-                        <li  v-on:click="classControll('Neteller')" :class="{'active':selected=='Neteller'}">
-                            <div><div></div></div>
-                            <p>Neteller</p>
-                        </li>
-                        <li v-on:click="classControll('China Union Pay')"  :class="{'active':selected=='China Union Pay'}">
-                            <div><div></div></div>
-                            <p>China <br>Union Pay</p>
-                        </li>
-                         <li v-on:click="classControll('Bank Transter')"  :class="{'active':selected=='Bank Transter'}">
-                           <div><div></div></div>
-                            <p>Bank <br>Transter</p>
-                        </li> 
                     </ul>
                 </div>
                 <div class="deposit-B-left-intruce clearfix" v-show="selected=='Bank/Credit Card'">
@@ -255,7 +239,8 @@ export default {
   data () {
     return {
       pageView:'',
-      selected:''
+      selected:'',
+      depositWay:['Bank/Credit Card','Skrill','Neteller','China Union Pay','Bank Transter']
     }
   },
   methods:{
