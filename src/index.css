@@ -1,0 +1,436 @@
+@media (max-width:1920px){
+    /* 导航栏开始 */
+    .infinox-small{
+        display:none;
+    }
+     .infinox-large {
+         width: 100%; 
+         height: 50px;
+         background: #212121;
+         color:white;
+         line-height: 50px;
+         display: block;
+     }
+    .infinox-large .infinox-left {
+        float:left;
+        font-size:30px;
+    }
+    .infinox-large .container .infinox-center{
+         width: 100%; 
+    }
+    .infinox-large .infinox-center li {
+        margin-left:15px;
+    }
+    .infinox-large .infinox-right {
+        float:right;
+    }
+
+  /* 导航栏结束 */
+  /* deposit部分开始 */
+  .deposit {
+        margin-top:10px;
+        background: #212121;
+        border-radius: 3px;
+        position:relative;
+        font-size: 14px;
+        min-height: calc(100vh - 120px);
+  }
+    /* deposit的top部分开始 */
+  .deposit-top {
+      width: 100%;
+      text-align: center;
+      color:white;
+      margin-top:30px;
+      font-size:20px;
+      margin-bottom:20px;
+  }
+    /* deposit的top部分结束 */
+    /* deposit的bottom部分开始 */
+    .deposit-bottom {
+        width: 100%;
+        margin:0 auto;
+    }
+    .deposit-B-left-title {
+        float:left;
+    }
+
+    .deposit-B-left,.deposit-B-right {
+        width: 45%;
+        float:left;
+    } 
+    .deposit-B-right {
+        float:right;
+    }
+    .deposit-B-left-title .rect,.deposit-B-left-account .rect, .deposit-B-right-title .rect{
+        width: 2px;
+        height: 20px;
+        background: #E27E0F;
+        float:left;
+    } 
+    .deposit-B-left-title  .text,.deposit-B-left-account .text,.deposit-B-right-title  .text{
+         float:left; 
+         margin-left:10px;
+         color:white;
+    }
+        .deposit-B-left-img{
+            border:0.5px solid #ccc;
+            border-radius: 4px;
+            margin-top:20px;
+            width: 100%;
+            float:left; 
+            height:108px;   
+            margin-bottom:10px;
+ 
+        }
+        .deposit-B-left-img ul {
+             display: flex;
+             justify-content: center; 
+             flex-wrap: nowrap;
+             flex-direction: row;
+ 
+ 
+        }
+    .deposit-B-left-img li {
+        margin-top:20px;
+        margin:0 auto;
+        position: relative;
+        height: 90px;
+        /* margin-left:20px; */
+    }
+    .deposit-B-left-img li p{
+        color:white;
+        text-align: center;
+ 
+
+    }
+    .deposit-B-left-img li:first-child p{
+        color:#F5C603;
+        text-align: center;
+ 
+
+    }
+    .deposit-B-left-img li div {
+        height: 55px;
+        position:relative;
+    }
+    .deposit-B-left-img li div div {
+        margin:0 auto;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+   
+    .deposit-B-left-img li:first-child div div {
+            background: url("../deposit/icon_card.png") no-repeat  bottom;
+            width: 46px;
+            height: 33px;    
+           
+    }
+    .deposit-B-left-img li:nth-child(2) div div{
+            background: url("../deposit/icon_skrill.png") no-repeat ;
+            width: 58px;
+            height: 18px;
+       
+
+           
+    }
+        .deposit-B-left-img li:nth-child(3) div div{
+            background: url("../deposit/icon_neteller.png") no-repeat ;
+            width: 83px;
+            height: 14px;
+            margin-left:10px;
+
+           
+    }
+    .deposit-B-left-img li:nth-child(4) div div{
+            background: url("../deposit/icon_union.png") no-repeat ;
+            width: 53px;
+            height: 33px;
+           
+    }
+        .deposit-B-left-img li:nth-child(5) div div{
+            background: url("../deposit/icon_bankTransfer.png") no-repeat ;
+            width: 62px;
+            height: 31px;
+           
+    }
+        .deposit-B-left-intruce,.deposit-B-right-intruce{
+            color:white;
+            line-height: 16px;
+            font-size: 12px;
+                    margin-bottom:10px;
+            /* text-align: center; */
+        }
+        .deposit-B-left-intruce h4,.deposit-B-right-intruce h4 {
+            text-align: center;
+            margin-top:10px;
+            font-weight: 100;
+        }
+        .deposit-B-left-intruce i {
+            color:#F5C603;
+    
+        }
+        .deposit-B-left-data  {
+            color:white;
+            font-size: 12px;
+        }
+          .deposit-B-left-data  li{
+            width:80%;
+            margin-top:10px;
+        }
+        .deposit-B-left-data li span:first-child {
+            float:left;
+        }
+         .deposit-B-left-data li span:last-child {
+            float:right;
+        }
+        .deposit-B-left-Note{
+            color:white;
+            margin-top:10px;
+        }
+        .deposit-B-left-button  button,.deposit-B-right-button button{
+            outline-color: transparent;
+            margin-top:20px;
+            height:20px;
+            font-size: 12px;
+            border-radius: 4px;
+            width: 100%;
+            color:#F5C603;
+            background-color:transparent;
+            /* background: transparent; */
+            border:1px solid #F5C603;
+            margin-bottom:20px;
+        }
+        .deposit-B-right-account div,.deposit-B-right-payment div {
+            margin-top:10px;
+            color:white;
+        }
+        .deposit-B-right-account select,.deposit-B-right-payment select {
+             background-color:transparent;
+             color:white;
+             width: 100%;
+             border-radius: 3px;
+             border:0.5px solid #ccc;
+             font-size: 12px;
+             height: 20px;
+             margin-top:10px;
+             margin-bottom:10px;
+        }
+        .deposit-B-right-enterAccount,.deposit-B-right-cardNum,.deposit-B-right-HolderName {
+            color:white;
+            margin-top:10px;
+         }
+        .deposit-B-right-enterAccount  input,.deposit-B-right-cardNum input,.deposit-B-right-HolderName input {
+            margin-top:10px;
+             width: 100%;
+             border-radius: 3px;
+             border:0.5px solid #ccc;
+            height: 20px;
+            background-color:transparent;
+            /* margin-left:10px; */
+        }
+        .deposit-B-right-RMBPay {
+            margin-top:10px;
+                 
+        }
+        .deposit-B-right-RMBPay span {
+            color:#F5C603;
+             margin-right:10px;
+        }
+        .deposit-B-right-date .left,.deposit-B-right-date .right {
+            width: 50%;
+            color:white;
+            margin-top:10px;
+      
+        }
+        .deposit-B-right-date .right div:first-child {
+            text-align: right;
+        }
+        .deposit-B-right-RMBPay input{
+             color:#F5C603;
+             margin-top:10px;
+                border-radius: 3px;
+             border:0.5px solid #ccc;
+            height: 20px;
+            background-color:transparent;
+            padding-left:11px;
+            width: 30px;
+         }
+
+         .deposit-B-right-date .left input,  .deposit-B-right-date .right input{
+             color:white;
+             width: 40%;
+             margin-top:10px;
+            border-radius: 3px;
+             border:0.5px solid #ccc;
+            height: 20px;
+            background-color:transparent;
+            padding-left:10px;
+         }
+      .deposit-B-right-debited {
+          color:white;
+           margin-top:10px; 
+
+      }
+        .deposit-B-right-text {
+            width: 60%;
+        }
+    .deposit-B-right-debited .deposit-B-right-text h5 {
+        color:#F5C603;
+        text-align: center;
+    }
+    .deposit-B-right-img {
+        width: 35%;
+        height: 100px;
+        border:0.5px solid #ccc;
+        margin-top:10px;
+    }
+    .deposit-B-right-Msg {
+        color:#E27E0F;
+        text-align:center;
+        margin-top:10px;
+    }
+    /* deposit的bottom部分结束 */
+    /* deposit的底部开始 */
+    .deposit-footer {
+        margin-top:10px;
+        color:white;
+        width: 90%;
+        margin:0 auto;
+        background: #212121;
+        overflow: auto;
+    }
+    
+    .deposit-footer table {
+        /* padding:0 10px; */
+         width: 100%; 
+        color:#ccc;
+      text-align: center;
+      background: #212121;
+        
+    }
+     .deposit-footer table  thead tr {
+         width: 100%;
+     }
+     .deposit-footer table  tr th, .deposit-footer table  tr td{
+        width: 16%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .deposit-footer table  th:first-child, .deposit-footer table  tr td:first-child {
+        width: 19%;
+    
+    }
+    .deposit-footer table  tr {
+        display: block;
+        /* margin-top:10px; */
+        border-bottom:0.5px solid #ccc;
+    }
+    .deposit-footer table  tr:last-child td:first-child{
+        width: 3%;
+        /* text-align:left; */
+    }
+    .deposit-footer div {
+        width: 100%;
+        color:#ccc;
+        padding-top:10px;
+         margin-bottom:10px; 
+        /* padding-bottom:10px; */
+    }
+    .deposit-footer div i {
+        color:red;
+    }
+   .deposit-last {
+       width: 100%;
+      margin:0 auto;
+    background: #212121;
+    margin-top:10px;
+   }
+    .deposit-last div {
+        color:#CCC;
+        height: 50px;
+        padding-top:15px;
+        /* line-height: 50px; */
+        vertical-align: center;
+        text-align: center;
+        font-size: 12px;
+        width: 80%;
+        margin:0 auto;
+
+    }
+    /* deposit底部结束 */
+/* deposit部分结束 */
+}
+@media(max-width:1024px){ 
+    /* 导航栏开始 */
+    .infinox-small{
+        display:block;
+        width: 100%;
+         height: 50px;
+         background: #212121;
+         color:white;
+         line-height: 50px;
+    }
+    .infinox-large {
+        display: none;
+    }
+     .infinox-small .infinox-left {
+         float:left;
+         font-size:30px;
+     }
+   
+     .infinox-small .infinox-center {
+        width: 100%;
+         text-align: center;
+        /* float:left; */
+        font-size:30px;
+        color:white;
+    }
+     .infinox-small .infinox-right {
+        float:right;
+        color:white;
+    }
+    /* 导航栏结束 */
+    /* deposit部分开始 */
+    .deposit-B-left,.deposit-B-right{
+        width: 100%;
+    }
+    .deposit {
+        height:auto;
+    }
+    .deposit-footer {
+        margin-top:10px;
+        width: 90%;
+        margin:0 auto;
+
+    }
+    .deposit-footer table {
+        width: 768px;
+    }
+    .deposit-footer div {
+        width: 768px;
+        background: #212121;
+    }
+    
+    /* deposit部分结束 */
+}
+@media(max-width:768px){
+    .deposit-B-left-img {
+        width: 100%;
+        height: 100px;
+        overflow:auto;
+    }
+    .deposit-B-left-img ul {
+        width: 610px;   
+        /* width: 100%; */
+  
+    }
+    .deposit-B-left-img ul li {
+        /* margin-left:30px; */
+    }
+    .deposit-last {
+        height: 70px;   
+        }
+}
