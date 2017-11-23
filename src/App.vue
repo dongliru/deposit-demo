@@ -46,25 +46,25 @@
                 </div>
                 <div class="deposit-B-left-img clearfix">
                     <ul >
-                        <li v-on:click="selected='Bank/Credit Card'">
-                            <div><div :class="{'changeColor':selected=='Bank/Credit Card'}"></div></div>
-                            <p :class="{'fontColor':selected=='Bank/Credit Card'}">Bank/Credit <br> Card</p>
+                        <li v-on:click="classControll('Bank/Credit Card')"  :class="{'active':selected=='Bank/Credit Card'}">
+                            <div><div></div></div>
+                            <p>Bank/Credit <br> Card</p>
                         </li>
-                        <li v-on:click="selected='Skrill'">
-                        <div><div :class="{'changeColor':selected=='Skrill'}"></div></div>
-                            <p :class="{'fontColor':selected=='Skrill'}">Skrill</p>
+                        <li v-on:click="classControll('Skrill')" :class="{'active':selected=='Skrill'}">
+                        <div><div ></div></div>
+                            <p>Skrill</p>
                         </li>
-                        <li  v-on:click="selected='Neteller'">
-                            <div><div :class="{'changeColor':selected=='Neteller'}"></div></div>
-                            <p :class="{'fontColor':selected=='Neteller'}">Neteller</p>
+                        <li  v-on:click="classControll('Neteller')" :class="{'active':selected=='Neteller'}">
+                            <div><div></div></div>
+                            <p>Neteller</p>
                         </li>
-                        <li v-on:click="selected='China Union Pay'">
-                            <div><div :class="{'changeColor':selected=='China Union Pay'}"></div></div>
-                            <p :class="{'fontColor':selected=='China Union Pay'}">China <br>Union Pay</p>
+                        <li v-on:click="classControll('China Union Pay')"  :class="{'active':selected=='China Union Pay'}">
+                            <div><div></div></div>
+                            <p>China <br>Union Pay</p>
                         </li>
-                         <li v-on:click="selected='Bank Transter'">
-                           <div><div :class="{'changeColor':selected=='Bank Transter'}"></div></div>
-                            <p :class="{'fontColor':selected=='Bank Transter'}">Bank <br>Transter</p>
+                         <li v-on:click="classControll('Bank Transter')"  :class="{'active':selected=='Bank Transter'}">
+                           <div><div></div></div>
+                            <p>Bank <br>Transter</p>
                         </li> 
                     </ul>
                 </div>
@@ -261,7 +261,9 @@ export default {
   methods:{
      selectChange:function(num){
       this.pageView = num;
-      console.log(num);
+     },
+     classControll:function(data){
+       this.selected = data;
      }
   }
 }
@@ -340,12 +342,11 @@ body,html {
       width: 46px;
       height: 33px; 
 }
-.changeColor{
+
+.deposit-B-left-img ul li.active div div {
   background-position:bottom  !important; 
-
-    }
-.fontColor {
-    color:#F5C603 !important;
 }
-
+.deposit-B-left-img ul li.active p {
+  color:#F5C603 !important;
+}
 </style>
